@@ -1,0 +1,20 @@
+{
+  "name": "yunxin",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "Segen",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . yunxin --platform=win32 --arch=ia32 --prute=true --out=./out --asar --icon=assets/icon.icn --overwrite"
+  },
+  "dependencies": {
+    "kit-fullsearch-electron": "2.1.4"
+  },
+  "devDependencies": {
+    "electron": "15.5.0",
+    "electron-packager": "17.1.2",
+    "sqlite3": "5.1.4"
+  }
+}

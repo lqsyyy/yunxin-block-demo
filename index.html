@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- important meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="screen-orientation" content="portrait" />
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="知音楼" />
+
+  <!-- desc and title -->
+  <meta name="keywords" content="知音楼" />
+  <meta name="description" content="知音楼" />
+
+  <title>知音楼</title>
+
+  <script type="text/javascript">
+    window.bpit_elk_page_start_time = new Date().getTime();
+
+  </script>
+  <script src="./NIM_Web_NIM_v8.9.122.js"></script>
+  <link rel="icon" href="./static/favicon.ico">
+</head>
+
+<body>
+  <script type="text/javascript">
+    let count = 0;
+
+    window.onload = function () {
+      document.getElementById('count').innerHTML = count;
+
+      window.nim = window.FullText(window.NIM).getInstance({
+        // searchDBPath: appStatus.searchDBPath,
+        // window.nim = NIM.getInstance({
+        appKey: '236e7ec1d4b721c997c1a5f549ebbce8',
+        account: '222140',
+        token: '92cc5202da715a5387042973d876d6b9',
+        db: true,
+        heartbeatInterval: 5000,
+        debug: false,
+        uploadSessionLog: true,
+        transports: ['websocket', 'xhr-polling'],
+        syncSessionUnread: true,
+        rollbackDelMsgUnread: true,
+        needReconnect: true,
+        quickReconnect: true,
+        logLevel: 'log',
+        onconnect: function (res) {
+          console.log('connect complsdf', res)
+        }
+      })
+
+      const timeDom = document.getElementById('time')
+      setInterval(function () {
+        if (timeDom) {
+          timeDom.innerHTML = new Date().toLocaleString()
+        }
+      }, 1000)
+    }
+
+
+    function add() {
+      count++;
+      document.getElementById('count').innerHTML = count;
+    }
+
+    function del() {
+      count--;
+      document.getElementById('count').innerHTML = count;
+    }
+
+  </script>
+  <div id="root">
+    <div>当前时间： <span id="time"></span></div>
+    <div>count: <span id="count"></span></div>
+    <button onclick="add()">+1</button>
+    <button onclick="del()">-1</button>
+  </div>
+</body>
+
+</html>
