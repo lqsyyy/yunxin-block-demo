@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, powerSaveBlocker } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -27,7 +27,9 @@ function createWindow() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+let id = 0
 app.whenReady().then(() => {
+  id = powerSaveBlocker.start('prevent-app-suspension')
   createWindow()
 
   app.on('activate', function () {
@@ -41,6 +43,7 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
+  id && powerSaveBlocker.stop(id)
   if (process.platform !== 'darwin') app.quit()
 })
 
