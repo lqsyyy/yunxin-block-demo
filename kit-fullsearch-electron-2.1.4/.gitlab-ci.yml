@@ -1,0 +1,321 @@
+stages:
+  - install-tests
+  - node-version-tests
+  - build
+
+darwin-node-12-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 12 && nvm use 12
+    - npm i && npm run build
+    - cd example && npm i
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-12-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 12 && nvm use 12
+    - npm install -g yarn
+    - yarn --ignore-engines && yarn run build
+    - cd example && yarn --ignore-engines
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-14-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 14 && nvm use 14
+    - npm i && npm run build
+    - cd example && npm i
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-14-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 14 && nvm use 14
+    - npm install -g yarn
+    - yarn && yarn run build
+    - cd example && yarn
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-16-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 16 && nvm use 16
+    - npm i && npm run build
+    - cd example && npm i
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-16-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 16 && nvm use 16
+    - npm install -g yarn
+    - yarn && yarn run build
+    - cd example && yarn
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-18-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 18 && nvm use 18
+    - npm i && npm run build
+    - cd example && npm i
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+darwin-node-18-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 18 && nvm use 18
+    - npm install -g yarn
+    - yarn && yarn run build
+    - cd example && yarn
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+win32-node-12-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 12 && nvm use 12
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-12-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 12 && nvm use 12
+    - npm install -g yarn
+    - yarn --ignore-engines
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn --ignore-engines
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-14-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 14 && nvm use 14
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-14-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 14 && nvm use 14
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-16-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 16 && nvm use 16
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-16-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 16 && nvm use 16
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-18-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 18 && nvm use 18
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-18-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 18 && nvm use 18
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-12-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 12 32 && nvm use 12 32
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-12-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 12 32 && nvm use 12 32
+    - npm install -g yarn
+    - yarn --ignore-engines
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn --ignore-engines
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-14-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 14 32 && nvm use 14 32
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-14-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 14 32 && nvm use 14 32
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-16-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 16 32 && nvm use 16 32
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-16-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 16 32 && nvm use 16 32
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-18-npm:
+  stage: node-version-tests
+  script:
+    - nvm install 18 32 && nvm use 18 32
+    - npm i
+    - npm run build
+    - cd .\example
+    - pwd
+    - npm i
+  tags:
+    - yunxin-win32-runner-new
+
+win32-node-ia32-18-yarn:
+  stage: node-version-tests
+  script:
+    - nvm install 18 32 && nvm use 18 32
+    - npm install -g yarn
+    - yarn
+    - yarn run build
+    - cd .\example
+    - pwd
+    - yarn
+  tags:
+    - yunxin-win32-runner-new
+
+build-darwin:
+  stage: build
+  script:
+    - export
+    - nvm use stable
+    - yarn && yarn run build
+    - cd example && npm i &&
+      yarn run package -- --arm64 &&
+      yarn run package -- --x64 && cd -
+    - mv ./example/dist/electron-fulltext-search-demo-1.0.0-arm64.dmg ./
+    - mv ./example/dist/electron-fulltext-search-demo-1.0.0.dmg ./
+  artifacts:
+    name: darwin-universal
+    paths:
+      - electron-fulltext-search-demo-1.0.0-arm64.dmg
+      - electron-fulltext-search-demo-1.0.0.dmg
+    expire_in: 1 week
+  tags:
+    - yunxin-darwin-runner-mac-mini
+
+build-win32:
+  stage: build
+  script:
+    - npm i
+    - npm run build
+    - cd example
+    - npm i
+    - npm run package -- --ia32
+    - npm run package -- --x64
+    - cd ..
+    - mv .\example\dist\win-ia32-unpacked\ .
+    - mv .\example\dist\win-unpacked\ .
+  artifacts:
+    name: win32-universal
+    paths:
+      - win-ia32-unpacked
+      - win-unpacked
+    expire_in: 1 week
+  tags:
+    - yunxin-win32-runner-new

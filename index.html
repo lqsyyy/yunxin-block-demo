@@ -38,10 +38,10 @@
   <script type="text/javascript">
     let count = 0;
 
-    window.onload = function () {
+    window.onload = async function () {
       document.getElementById('count').innerHTML = count;
 
-      window.nim = window.FullText(window.NIM).getInstance({
+      window.nim = await window.FullText(window.NIM).getInstance({
         // searchDBPath: appStatus.searchDBPath,
         // window.nim = NIM.getInstance({
         appKey: '236e7ec1d4b721c997c1a5f549ebbce8',
@@ -58,16 +58,13 @@
         quickReconnect: true,
         logLevel: 'log',
         onconnect: function (res) {
-          console.log('connect complsdf', res)
+          console.log('connect success', res, window.nim)
         }
       })
 
-      const timeDom = document.getElementById('time')
-      setInterval(function () {
-        if (timeDom) {
-          timeDom.innerHTML = new Date().toLocaleString()
-        }
-      }, 1000)
+      setTimeout(() => {
+        console.log('window.nim',  window.nim)
+      }, 10000)
     }
 
 

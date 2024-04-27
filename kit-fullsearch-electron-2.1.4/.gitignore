@@ -1,0 +1,9 @@
+coverage/
+node_modules
+lib
+junit.xml
+.history
+.vscode
+.DS_Store
+NIM-FULLTEXT-SEARCHDB-*
+example/*.sqlite*

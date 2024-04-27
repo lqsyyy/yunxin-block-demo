@@ -1,0 +1,32 @@
+{
+  "name": "electron-fulltext-search-demo",
+  "version": "1.0.0",
+  "description": "electron fulltext search demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder"
+  },
+  "keywords": [
+    "Electron",
+    "fulltext",
+    "Netease",
+    "yunxin",
+    "im"
+  ],
+  "author": "Netease-yunxin",
+  "license": "CC0-1.0",
+  "build": {
+    "asar": true
+  },
+  "dependencies": {
+    "kit-fullsearch-electron": "file:..",
+    "mockjs": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron": "^11.1.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1",
+    "electron-rebuild": "^3.2.9"
+  }
+}
