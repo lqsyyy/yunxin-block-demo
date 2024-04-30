@@ -7,7 +7,8 @@
   "author": "Segen",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . yunxin --platform=win32 --arch=ia32 --prute=true --out=./out --asar --icon=assets/icon.icn --overwrite"
+    "package": "electron-packager . yunxin --platform=win32 --arch=ia32 --prute=true --out=./out --asar --icon=assets/icon.icn --overwrite",
+    "package:64": "electron-packager . yunxin --platform=win32 --arch=x64 --prute=true --out=./out --asar --icon=assets/icon.icn --overwrite"
   },
   "dependencies": {
     "kit-fullsearch-electron": "2.1.4"

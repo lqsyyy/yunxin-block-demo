@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, powerSaveBlocker } = require('electron')
+const { app, BrowserWindow, powerSaveBlocker, protocol } = require('electron')
 const path = require('path')
 
 function createWindow() {
@@ -24,11 +24,21 @@ function createWindow() {
   // mainWindow.webContents.openDevTools()
 }
 
+function registerP() {
+  protocol.registerFileProtocol('atom', (req, callback) => {
+    const assetsPath = path.resolve(__dirname, req.url.replace('atom://', ''))
+    const url = path.normalize(assetsPath)
+    console.log('url', url, assetsPath)
+    callback(url)
+  })
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 let id = 0
 app.whenReady().then(() => {
+  registerP()
   id = powerSaveBlocker.start('prevent-app-suspension')
   createWindow()
 

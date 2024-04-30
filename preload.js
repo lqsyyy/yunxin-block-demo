@@ -1,3 +1,3 @@
-const FullText = require('kit-fullsearch-electron').default
+// const FullText = require('kit-fullsearch-electron').default
 
-global.FullText = FullText
+// global.FullText = FullText

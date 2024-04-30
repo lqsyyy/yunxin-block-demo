@@ -30,7 +30,7 @@
     window.bpit_elk_page_start_time = new Date().getTime();
 
   </script>
-  <script src="./NIM_Web_NIM_v8.9.122.js"></script>
+  <!-- <script src="./NIM_Web_NIM_v8.9.122.js"></script> -->
   <link rel="icon" href="./static/favicon.ico">
 </head>
 
@@ -41,33 +41,34 @@
     window.onload = function () {
       document.getElementById('count').innerHTML = count;
 
-      window.nim = window.FullText(window.NIM).getInstance({
-        // searchDBPath: appStatus.searchDBPath,
-        // window.nim = NIM.getInstance({
-        appKey: '236e7ec1d4b721c997c1a5f549ebbce8',
-        account: '222140',
-        token: '92cc5202da715a5387042973d876d6b9',
-        db: true,
-        heartbeatInterval: 5000,
-        debug: false,
-        uploadSessionLog: true,
-        transports: ['websocket', 'xhr-polling'],
-        syncSessionUnread: true,
-        rollbackDelMsgUnread: true,
-        needReconnect: true,
-        quickReconnect: true,
-        logLevel: 'log',
-        onconnect: function (res) {
-          console.log('connect complsdf', res)
-        }
-      })
+      // window.nim = window.NIM.getInstance({
+      //   // searchDBPath: appStatus.searchDBPath,
+      //   // window.nim = NIM.getInstance({
+      //   appKey: '236e7ec1d4b721c997c1a5f549ebbce8',
+      //   account: '222140',
+      //   token: '92cc5202da715a5387042973d876d6b9',
+      //   db: true,
+      //   heartbeatInterval: 5000,
+      //   debug: false,
+      //   uploadSessionLog: true,
+      //   transports: ['websocket', 'xhr-polling'],
+      //   syncSessionUnread: true,
+      //   rollbackDelMsgUnread: true,
+      //   needReconnect: true,
+      //   quickReconnect: true,
+      //   logLevel: 'log',
+      //   onconnect: function (res) {
+      //     console.log('connect complsdf', res)
+      //   }
+      // })
 
-      const timeDom = document.getElementById('time')
-      setInterval(function () {
-        if (timeDom) {
-          timeDom.innerHTML = new Date().toLocaleString()
-        }
-      }, 1000)
+      // const timeDom = document.getElementById('time')
+      // let timer = setInterval(function () {
+      //   // if (timeDom) {
+      //   // timeDom.innerHTML = new Date().toLocaleString()
+      //   // }
+      //   console.log('当前时间：', new Date().toLocaleString())
+      // }, 1000)
     }
 
 
@@ -83,10 +84,12 @@
 
   </script>
   <div id="root">
-    <div>当前时间： <span id="time"></span></div>
+    <!-- <div>当前时间： <span id="time"></span></div> -->
     <div>count: <span id="count"></span></div>
     <button onclick="add()">+1</button>
     <button onclick="del()">-1</button>
+
+    <img src="atom://assets/public-assets/image.gif" alt="" srcset="">
   </div>
 </body>
 
